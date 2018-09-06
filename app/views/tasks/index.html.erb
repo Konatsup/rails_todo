@@ -1,5 +1,15 @@
-<% @tasks.each do |task| %>
-  <div class="todo">
-    <%= task.title %>
+<div>
+  <div>
+    <%= form_tag("/tasks/create", {method: "post"}) do %>
+      <input name="title" value="" placeholder="Todo名">
+      <input type="submit" value="追加">
+    <% end %>
   </div>
-<% end %>
+  <div>
+    <% @tasks.each do |task| %>
+      <div class="todo">
+        <%= task.title %>
+      </div>
+    <% end %>
+  </div>
+</div>
