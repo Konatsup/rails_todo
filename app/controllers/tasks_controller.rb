@@ -7,7 +7,6 @@ class TasksController < ApplicationController
     if @task.save
       flash[:success] = "\"" + @task.title+ "\"" + "を追加しました"
       redirect_to('/')
-    else
     end
   end
 
